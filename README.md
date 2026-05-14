@@ -9,15 +9,32 @@ KitaUndang adalah platform SaaS undangan digital untuk pasar Indonesia, dengan M
 
 ## Status Repo
 
-Repo ini masih berada pada fase persiapan eksekusi. Scaffold aplikasi belum dibuat.
+Repo ini sudah memiliki scaffold Laravel 11, Breeze Inertia Vue, auth bawaan, migration/model domain MVP, dan seed template awal sebagai dasar Sprint 0.
 
 ## Langkah Implementasi Pertama
 
-1. Init Laravel 11 di root repo.
-2. Pasang Laravel Breeze dengan Inertia Vue.
-3. Setup database MySQL lokal.
-4. Implement migration dan model utama sesuai `docs/EXECUTION_PLAN.md`.
-5. Bangun flow pertama: auth, dashboard kosong, CRUD undangan, lalu guest view `/u/{slug}`.
+1. Setup database MySQL lokal sesuai `.env.example`.
+2. Jalankan migration dan seeder.
+3. Bangun flow Sprint 1: CRUD undangan, publish, lalu guest view `/u/{slug}`.
+4. Sambungkan RSVP dan ucapan ke dashboard.
+
+## Setup Lokal
+
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+npm run dev
+```
+
+Untuk verifikasi:
+
+```bash
+php artisan test
+npm run build
+```
 
 ## Target MVP
 
